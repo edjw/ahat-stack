@@ -10,18 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.3.1",
+    "@alpinejs/persist": "^3.13.2",
     "@astrojs/check": "^0.3.1",
     "@astrojs/netlify": "^3.0.4",
     "@astrojs/tailwind": "^5.0.2",
     "@types/alpinejs": "^3.0.0",
-    "alpinejs": "^3.0.0",
+    "alpinejs": "^3.13.2",
     "astro": "^3.4.4",
     "htmx.org": "^1.9.8",
     "tailwindcss": "^3.0.24",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10"
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/alpinejs__persist": "^3.13.3"
   }
 }

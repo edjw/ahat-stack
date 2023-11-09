@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@astrojs/alpinejs':
-    specifier: ^0.3.1
-    version: 0.3.1(@types/alpinejs@3.13.5)(alpinejs@3.13.2)
+  '@alpinejs/persist':
+    specifier: ^3.13.2
+    version: 3.13.2
   '@astrojs/check':
     specifier: ^0.3.1
     version: 0.3.1(typescript@5.2.2)
@@ -21,7 +21,7 @@ dependencies:
     specifier: ^3.0.0
     version: 3.13.5
   alpinejs:
-    specifier: ^3.0.0
+    specifier: ^3.13.2
     version: 3.13.2
   astro:
     specifier: ^3.4.4
@@ -40,6 +40,9 @@ devDependencies:
   '@tailwindcss/typography':
     specifier: ^0.5.10
     version: 0.5.10(tailwindcss@3.3.5)
+  '@types/alpinejs__persist':
+    specifier: ^3.13.3
+    version: 3.13.3
 
 packages:
 
@@ -47,22 +50,16 @@ packages:
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
     engines: {node: '>=10'}
 
+  /@alpinejs/persist@3.13.2:
+    resolution: {integrity: sha512-GWTqFBugNiGq/9E0XCkGnWBUcETrPG8Op2I+aBmiBfjkFCP6P/NLCHEbrEcaqWkok2Wp//0TLz3R2YBsFP0B1Q==}
+    dev: false
+
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.20
-    dev: false
-
-  /@astrojs/alpinejs@0.3.1(@types/alpinejs@3.13.5)(alpinejs@3.13.2):
-    resolution: {integrity: sha512-GKaptRkdJvcqoTOCeAbeiemnpsayJkUmShSjR2qlkvpCIv7B5HzqqfkblLnOwgMGKOggpwZJAZfSAmALqWgNcw==}
-    peerDependencies:
-      '@types/alpinejs': ^3.0.0
-      alpinejs: ^3.0.0
-    dependencies:
-      '@types/alpinejs': 3.13.5
-      alpinejs: 3.13.2
     dev: false
 
   /@astrojs/check@0.3.1(typescript@5.2.2):
@@ -917,7 +914,12 @@ packages:
 
   /@types/alpinejs@3.13.5:
     resolution: {integrity: sha512-BSNTroRhmBkNiyd7ELK/5Boja92hnQMST6H4z1BqXKeMVzHjp9o1j5poqd5Tyhjd8oMFwxYC4I00eghfg2xrTA==}
-    dev: false
+
+  /@types/alpinejs__persist@3.13.3:
+    resolution: {integrity: sha512-YCU1/WpyeWxLVOx+y50kDYJZXud69hwwXdYIxPFnanxmwJsOZ7LMd6D4BolybmkPWluBwlbJ+6i0t5tH6bSGsg==}
+    dependencies:
+      '@types/alpinejs': 3.13.5
+    dev: true
 
   /@types/babel__core@7.20.4:
     resolution: {integrity: sha512-mLnSC22IC4vcWiuObSRjrLd9XcBTGf59vUSoq2jkQDJ/QQ8PMI9rSuzE+aEV8karUMbskw07bKYoUJCKTUaygg==}

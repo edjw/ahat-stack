@@ -1,6 +1,4 @@
 ---
-import HTMXPath from "htmx.org/dist/htmx.min.js?url";
-
 import Footer from "@/components/Footer.astro";
 import Menu from "@/components/Menu.astro";
 interface Props {
@@ -33,10 +31,20 @@ const { title } = Astro.props;
 		/>
 		<title>{title}</title>
 
-		<script
-			is:inline
-			src={HTMXPath}
-		></script>
+		<script>
+			import htmx from "htmx.org";
+			window.htmx = htmx;
+			htmx.config.globalViewTransitions = true;
+		</script>
+
+		<script>
+			import Alpine from "alpinejs";
+			import persist from "@alpinejs/persist";
+
+			window.Alpine = Alpine;
+			Alpine.plugin(persist);
+			Alpine.start();
+		</script>
 	</head>
 	<body
 		class="container px-8 py-8 grid grid-cols-1 grid-rows-[auto_1fr_auto] min-h-[100vh] prose"

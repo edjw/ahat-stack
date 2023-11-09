@@ -107,7 +107,7 @@ import Layout from "@/layouts/PageLayout.astro";
 			number. It keeps locality of behaviour to within the HTML in the templ
 			template.
 		</p>
-		<div x-data="{ count: 0 }">
+		<div x-data="{ count: $persist(0) }">
 			<button
 				class="px-2 py-1 border rounded select-none"
 				x-on:click="count++"
