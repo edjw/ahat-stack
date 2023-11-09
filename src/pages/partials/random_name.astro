@@ -1,0 +1,35 @@
+---
+export const partial = true;
+export const prerender = false;
+
+async function FetchRandomUser() {
+	const url = "https://random-data-api.com/api/v2/users";
+	let personData = { first_name: "N/A", last_name: "N/A" };
+
+	try {
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
+		}
+		const data = await response.json();
+		if (data && data.first_name && data.last_name) {
+			personData.first_name = data.first_name;
+			personData.last_name = data.last_name;
+		} else {
+			console.error("Unexpected response structure", data);
+		}
+	} catch (err) {
+		console.error("Fetch failed", err);
+	}
+
+	return personData;
+}
+
+const person = await FetchRandomUser();
+---
+
+<h1>
+	<span class="italic">{person.first_name}</span>
+	{" "}
+	<span>{person.last_name}</span>
+</h1>

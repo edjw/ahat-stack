@@ -1,0 +1,55 @@
+---
+import HTMXPath from "htmx.org/dist/htmx.min.js?url";
+
+import Footer from "@/components/Footer.astro";
+import Menu from "@/components/Menu.astro";
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Astro description"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>{title}</title>
+
+		<script
+			is:inline
+			src={HTMXPath}
+		></script>
+	</head>
+	<body
+		class="container px-8 py-8 grid grid-cols-1 grid-rows-[auto_1fr_auto] min-h-[100vh] prose"
+	>
+		<header>
+			<h1 class="mb-1">{title}</h1>
+			<Menu />
+		</header>
+
+		<main class="flex flex-col gap-y-8">
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>
